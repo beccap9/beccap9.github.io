@@ -1,0 +1,16 @@
+#myCanvas{
+	border: 4px solid black;
+	
+	 
+}
+
+#button{
+	color:white;
+	background-color: #99b3e6;
+	border:none;
+	padding: 10px;
+	font-size:14px;
+	font-family:Verdana,sans-serif;
+	margin-top:20px;
+
+}
