@@ -1,6 +1,226 @@
 let currentPlayer = "X"; //global variable visible to entire page
 let gameStatus =""; //"" - continue game, "Tie, "X Wins, "O wins"
 let counter = 0;
+let idNames = ["one", "two", "three", "four", "five", "six",
+"seven", "eight", "nine"];
+
+let cb = [];
+
+	
+	
+	
+
+// reset board and all variables
+function newGame() {
+	
+	// reset the board
+	for(var i = 0; i < idNames.length; i++){
+		document.getElementById(idNames[i]).innerHTML = "";
+		
+	}//for 
+	
+counter = 0;
+gameStatus = 0;	
+currentPlayer = "X";
+	
+changeVisibility("controls");
+	
+}//newGame
+
+
+
+
+
+
+//chooses box for computer to go in
+function computerTakeTurn(){
+
+	let idName = "";
+	cb = []; // current board
+	cb[0] = ""; //not going to use
+	cb[1] = document.getElementById("one").innerHTML;
+	cb[2] = document.getElementById("two").innerHTML;
+	cb[3] = document.getElementById("three").innerHTML;
+	cb[4] = document.getElementById("four").innerHTML;
+	cb[5] = document.getElementById("five").innerHTML;
+	cb[6] = document.getElementById("six").innerHTML;
+	cb[7] = document.getElementById("seven").innerHTML;
+	cb[8] = document.getElementById("eight").innerHTML;
+	cb[9] = document.getElementById("nine").innerHTML;
+
+		
+		do{
+	
+		
+		if(cb[5] == ""){
+			
+		idName = idNames[4];
+		document.getElementById(idName).innerHTML = currentPlayer;
+		break;
+		
+		}else if((cb[1] == ("X" || "O")) && (cb[2] == cb[1]) && (cb[3] == "")){
+			
+		idName = idNames[2];
+		
+		document.getElementById(idName).innerHTML = currentPlayer;
+		
+		
+		break;
+		
+		}else if((cb[3] == ("X" || "O")) && (cb[2] == cb[3]) && (cb[1] == "")){
+			
+		idName = idNames[0];
+		
+		document.getElementById(idName).innerHTML = currentPlayer;
+		
+		
+		break;
+		
+		}else if((cb[4] == ("X" || "O")) && (cb[5] == cb[4]) && (cb[6] == "")){
+			
+		idName = idNames[5];
+		
+		document.getElementById(idName).innerHTML = currentPlayer;
+		
+		
+		break;
+		
+		}else if((cb[6] == ("X" || "O")) && (cb[6] == cb[5]) && (cb[4] == "")){
+			
+		idName = idNames[3];
+		
+		document.getElementById(idName).innerHTML = currentPlayer;
+
+		
+		break;
+		
+		}else if((cb[7] == ("X" || "O")) && (cb[8] == cb[7]) && (cb[9] == "")){
+			
+		idName = idNames[8];
+		
+		document.getElementById(idName).innerHTML = currentPlayer;
+		
+		
+		break;
+		
+		}else if((cb[9] == ("X" || "O")) && (cb[8] == cb[9]) && (cb[7] == "")){
+			
+		idName = idNames[6];
+		
+		document.getElementById(idName).innerHTML = currentPlayer;
+		
+		
+		break;
+		
+		}else if((cb[1] == ("X" || "O")) && (cb[4] == cb[1]) && (cb[7] == "")){
+			
+		idName = idNames[6];
+		
+		document.getElementById(idName).innerHTML = currentPlayer;
+		
+		
+		break;
+		
+		}else if((cb[7] == ("X" || "O")) && (cb[4] == cb[7]) && (cb[1] == "")){
+			
+		idName = idNames[0];
+		
+		document.getElementById(idName).innerHTML = currentPlayer;
+		
+		
+		break;
+		
+		}else if((cb[2] == ("X" || "O")) && (cb[5] == cb[2]) && (cb[8] == "")){
+			
+		idName = idNames[7];
+		
+		document.getElementById(idName).innerHTML = currentPlayer;
+		
+		
+		break;
+		
+		}else if((cb[8] == ("X" || "O")) && (cb[5] == cb[8]) && (cb[2] == "")){
+			
+		idName = idNames[1];
+		
+		document.getElementById(idName).innerHTML = currentPlayer;
+		
+		
+		break;
+		
+		}else if((cb[3] == ("X" || "O")) && (cb[6] == cb[3]) && (cb[9] == "")){
+			
+		idName = idNames[8];
+		
+		document.getElementById(idName).innerHTML = currentPlayer;
+		
+		
+		break;
+		
+		}else if((cb[9] == ("X" || "O")) && (cb[6] == cb[9]) && (cb[3] == "")){
+			
+		idName = idNames[2];
+		
+		document.getElementById(idName).innerHTML = currentPlayer;
+		
+		
+		break;
+		
+	
+		}else if((cb[1] == ("X" || "O")) && (cb[5] == cb[1]) && (cb[9] == "")){
+			
+		idName = idNames[8];
+		
+		document.getElementById(idName).innerHTML = currentPlayer;
+		
+		
+		break;
+		
+		}else if((cb[9] == ("X" || "O")) && (cb[5] == cb[9]) && (cb[1] == "")){
+			
+		idName = idNames[0];
+		
+		document.getElementById(idName).innerHTML = currentPlayer;
+		
+		
+		break;
+		
+		}else if((cb[3] == ("X" || "O")) && (cb[5] == cb[3]) && (cb[7] == "")){
+			
+		idName = idNames[6];
+		
+		document.getElementById(idName).innerHTML = currentPlayer;
+		
+		
+		break;
+		
+		}else if((cb[7] == ("X" || "O")) && (cb[5] == cb[7]) && (cb[3] == "")){
+			
+		idName = idNames[2];
+		
+		document.getElementById(idName).innerHTML = currentPlayer;
+		
+		
+		break;
+		
+		}else{
+		
+		let rand = parseInt(Math.random()*9)+1;
+		idName = idNames[rand-1];
+		if(document.getElementById(idName).innerHTML == "" ) {
+		
+		document.getElementById(idName).innerHTML = currentPlayer;
+		break;
+		}//if
+		
+		
+		
+		}//else
+	
+		}while(true);
+}// computerTakeTurn
+
+
 
 
 
@@ -10,16 +230,24 @@ function playerTakeTurn(e){
 	if(e.innerHTML ==""){
 		e.innerHTML = currentPlayer;
 		changeGameStatus();
+		
+		
+		//if game not over computer goes
+		if(gameStatus == "") {
+			setTimeout(function() {
+				computerTakeTurn();
+				changeGameStatus();
+				}, 500
+			);
+		}//if
+		
 	} else{
 		showLightBox("This box is already selected.", "Please try another.");
 		
 		return;
 	}// else
 	
-	if(gameStatus != ""){
-		showLightBox(gameStatus, "Game Over.");
-		
-	}
+
 
 
 
@@ -35,19 +263,18 @@ function changeGameStatus(){
 	// check Win
 	if(checkWin()){
 		gameStatus = currentPlayer + " wins!";
-		return gameStatus;
-	}
-	
-	//check for tie 
-	if(counter == 9){
-		gameStatus="Tie Game";
+	}else if(counter == 9){
+		gameStatus= "Tie Game";
 		
 	}// counter
 	
 	// switch current player
 	currentPlayer = (currentPlayer == "X" ? "O" : "X");
 	
-	
+	if(gameStatus != ""){
+	setTimeout(function() {showLightBox(gameStatus, "Game Over.");},500
+	);
+	}
 	
 }// checkGameStatus
 
@@ -55,7 +282,7 @@ function changeGameStatus(){
 //Check for a win, there 8 win paths
 function checkWin() {
 	
-	let cb = []; // current board
+	cb = []; // current board
 	cb[0] = ""; //not going to use
 	cb[1] = document.getElementById("one").innerHTML;
 	cb[2] = document.getElementById("two").innerHTML;
@@ -69,35 +296,35 @@ function checkWin() {
 	
 	
 	//top row 
-	if (cb[1] != "" && cb[1] == cb[2] && cb[2] == cb[3]){
+	if (cb[1] == currentPlayer && cb[1] == cb[2] && cb[2] == cb[3]){
 		return true;
 	}
 	//second row 
-	if (cb[4] != "" && cb[4] == cb[5] && cb[5] == cb[6]){
+	if (cb[4] == currentPlayer && cb[4] == cb[5] && cb[5] == cb[6]){
 		return true;
 	}
 	//third row 
-	if (cb[7] != "" && cb[7] == cb[8] && cb[8] == cb[9]){
+	if (cb[7] == currentPlayer && cb[7] == cb[8] && cb[8] == cb[9]){
 		return true;
 	}
 	//first vertical row 
-	if (cb[1] != "" && cb[1] == cb[4] && cb[4] == cb[7]){
+	if (cb[1] == currentPlayer && cb[1] == cb[4] && cb[4] == cb[7]){
 		return true;
 	}
 	//second vertical row 
-	if (cb[2] != "" && cb[2] == cb[5] && cb[5] == cb[8]){
+	if (cb[2] == currentPlayer && cb[2] == cb[5] && cb[5] == cb[8]){
 		return true;
 	}
 	//third vertical row 
-	if (cb[3] != "" && cb[3] == cb[6] && cb[6] == cb[9]){
+	if (cb[3] == currentPlayer && cb[3] == cb[6] && cb[6] == cb[9]){
 		return true;
 	}
 	//diagnol row pointing left
-	if (cb[1] != "" && cb[1] == cb[5] && cb[5] == cb[9]){
+	if (cb[1] == currentPlayer && cb[1] == cb[5] && cb[5] == cb[9]){
 		return true;
 	}
 	//diagnol row pointing right
-	if (cb[3] != "" && cb[3] == cb[5] && cb[5] == cb[7]){
+	if (cb[3] == currentPlayer && cb[3] == cb[5] && cb[5] == cb[7]){
 		return true;
 	}
 	
@@ -151,19 +378,10 @@ function continueGame(){
 	
 	//if the game is over, show controls 
 	// play game again
+	if (gameStatus != "") {
+		changeVisibility("controls");
+	}//if
 	
 }// continueGame
-
-
-
-
-
-
-
-
-
-
-
-
 
 

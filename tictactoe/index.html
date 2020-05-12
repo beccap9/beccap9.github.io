@@ -15,6 +15,11 @@
   
   <h1 class="titletext">Tic Tac Toe</h1>
   
+  
+  
+  
+  
+  
 	<div id="main">
 		<div id="one" class="box" onclick="playerTakeTurn(this)"></div>
 		<div id="two" class="box" onclick="playerTakeTurn(this)"></div>
@@ -30,13 +35,21 @@
 	</div>
 
 
+<div id="controls" class="hidden">
+
+<button id="newbutton" onclick="newGame()"> Start New Game </button>
+ </div>
+
+
+
+
 <div id="lightbox" class="hidden"></div>
 
 
 <div id="positionMessage">
 	<div id="boundaryMessage" class="hidden">
 		<img id="x" src="images/x.png" alt="close" onclick="continueGame()">
-		<h1 class="titletext" id="message"> </h1>
+		<h1 class="titletext" id="message">&nbsp;</h1>
 		<p class="titletext" id="message2"></p>
 	</div>
 
