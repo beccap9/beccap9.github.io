@@ -13,20 +13,23 @@ body{
 	
 	margin-left:auto;
 	margin-right:auto;
+	
 }
 
 #gameBoard div{
 	background-color:white;
 	background-repeat:no-repeat;
 	background-size:cover;
+	
 }
 
+/*** Images ***/
 
 .tree{
 	background-image:url("images/tree.png");
 }
 .flag{
-	background-image:url("images/flag.png");
+	background-image:url("images/redflag.png");
 }
 .rock{
 	background-image:url("images/rock.png");
@@ -42,63 +45,71 @@ body{
 }
 
 .horseup{
-	background-image:url("images/normalarrow.png");
+	background-image:url("images/horseup.png");
 }
 .horsedown{
-	background-image:url("images/normalarrowdown.png");
+	background-image:url("images/horsedown.png");
 }
 .horseleft{
-	background-image:url("images/normalarrowleft.png");
+	background-image:url("images/horseleft.png");
 }
 .horseright{
-	background-image:url("images/normalarrowright.png");
+	background-image:url("images/horseright.png");
 }
 
 .riderhorseup{
-	background-image:url("images/mainarrow.png");
+	background-image:url("images/riderhorseup.png");
 }
 .riderhorsedown{
-	background-image:url("images/mainarrowdown.png");
+	background-image:url("images/riderhorsedown.png");
 }
 .riderhorseleft{
-	background-image:url("images/mainarrowleft.png");
+	background-image:url("images/riderhorseleft.png");
 }
 .riderhorseright{
-	background-image:url("images/mainarrowright.png");
+	background-image:url("images/riderhorseright.png");
 }
 
 .jumpup{
-	background-image:url("images/jumpup.png");
+	background-image:url("images/fencejumpup.png");
 }
 .jumpdown{
-	background-image:url("images/jumpdown.png");
+	background-image:url("images/fencejumpdown.png");
 }
 .jumpleft{
-	background-image:url("images/jumpleft.png");
+	background-image:url("images/fencejumpleft.png");
 }
 .jumpright{
-	background-image:url("images/jumpright.png");
+	background-image:url("images/fencejumpright.png");
 }
 
 .enemy{
-	background-image:url("images/enemyarrow.png");
+	background-image:url("images/enemy.png");
 }
 .enemydown{
-	background-image:url("images/enemyarrowdown.png");
+	background-image:url("images/enemydown.png");
 }
 .enemyleft{
-	background-image:url("images/enemyarrowleft.png");
+	background-image:url("images/enemyleft.png");
 }
 .enemyright{
-	background-image:url("images/enemyarrowright.png");
+	background-image:url("images/enemyright.png");
 }
 .sentry{
-	background-image:url("images/sentry.png");
+	background-image:url("images/rider.png");
 }
 
 .bridge{
 	background-color:brown !important;
 }
+
+.badflag{
+	background-image:url("images/blueflag.png");
+}
+
+
+/*** End of images ***/
+
 
 
 
@@ -112,33 +123,60 @@ body{
 	left:0px;
 	width:100%;
 	height:100%;
-	background-color:rgba(0,0,0,0.8);
-	color:white;
-	font-family:Verdana,sands-serif;
+	background-color:rgba(0,0,0,0.9);
+	color:#ea907a;
+	font-family:"Lucida Console", Courier, monospace;
 	font-size:8em;
 	vertical-align:top;
 	text-align:center;
 	line-height:100vh;
+	
+
+}
+
+/*** Messages ***/
+#startscreen{
+	display:none;
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	background-color:rgba(0,0,0,0.9);
+	line-height:7vh;
+}
+
+#pg{
+	font-family:"Lucida Console", Courier, monospace;
+	font-size:2em;
+	text-align:center;
+	padding:10px;
+	color:#ea907a;
 }
 
 
+#welcome{
+	color:#fbc687;
+	font-family:"Lucida Console", Courier, monospace;
+	font-size:4em;
+	vertical-align:top;
+	text-align:center;
+	padding: 40px;
+}
 
+/*** Buttons ***/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.newbutton {
+	position:absolute;
+	top:15px;
+	right:15px;
+	height:80px;
+	width:150px;
+	background-color:#aacdbe;
+	color:#f4f7c5;
+	font-family:"Lucida Console", Courier, monospace;
+	border-radius: 25px;
+}
 
 
 
