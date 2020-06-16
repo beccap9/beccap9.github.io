@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Albert and Simon's Adventure</title>
+    
+    <!-- include an external style sheet -->
+    <link rel="stylesheet" href="style.css">  
+    
+  </head>
+  
+  
+  
+  <body>
+  
+	<div id="gameBoard">
+	
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	
+	</div> 
+  
+  
+  <div  id="startscreen">
+  <h1 id="welcome">Welcome to Albert Adventure!</h1>
+  <p id="pg">You are in competition for the throne of your kingdom. In order to win, you must collect all three red flags. Do not cross paths 
+  with your evil twin brother. He is also competing for the throne and will try to stop you. Be careful of other flags he put out to trick you... Good Luck!</p>
+  <button class="newbutton" onclick="loadLevel(startLevel)">Click to Start</button>
+  </div>
+  
+  <div class="message" id="lose">You Lose :(
+   <button class="newbutton" onclick="loadLevel(startLevel)">Start New Game</button>
+  </div>
+ 
+  <div class="message" id="levelup">Next level...</div>
+  
+  <div class="message" id="gameover">Levels Complete!
+  <button class="newbutton" onclick="loadLevel(startLevel)">Start New Game</button>
+  </div>
+  
+  
+    <!-- include an external JavaScript file -->
+    <script src="game.js"></script>
+  </body>
+  
+</html>
