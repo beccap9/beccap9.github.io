@@ -43,7 +43,7 @@
 	var horseDirection; //need for animate enemy 
 	var testFlag; //to see if the rider ran onto bad flag
 	var gameEnd = true; //checks if the game is over
-
+	
 	/**sounds**/
 	var winnerSound = new sound("winner.mp3");
 	var evilLaugh = new sound("evillaugh.mp3");
@@ -59,14 +59,13 @@
 		loadLevel(currentLevel);
 		window.clearInterval(currentAnimation);
 		
-		
+		gameEnd = false;
 		document.getElementById("startscreen").style.display = "block";
 	});
 	
 	
 	
 	//move horse
-	document.getElementById("newbutton").addEventListener("click", function(){ //starts when button is clicked
 	document.addEventListener("keydown", function (e){
 		
 		switch(e.keyCode){
@@ -106,7 +105,7 @@
 			break;
 		}//switch
 	});//key event listener
-	});//event listener button
+	
 	
 	
 	
@@ -479,7 +478,7 @@ function sound(src) {
 
 //stop game play
 function stopGame() {
-
+	currentLevel = startLevel;
 	window.clearInterval(currentAnimation);
     gameEnd = false;
 	
